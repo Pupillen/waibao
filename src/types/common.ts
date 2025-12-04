@@ -15,4 +15,4 @@ export interface FeedbackItem {
   text: string;
 }
 
-export type DefenseStatus = 'idle' | 'recording' | 'analyzing' | 'done';
+export type DefenseStatus = 'idle' | 'recording' | 'reviewing' | 'analyzing' | 'done';
