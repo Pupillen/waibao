@@ -1,0 +1,61 @@
+密钥：sk-EmDNR3qxQi0yWxSPXMy7Kw
+
+
+示例：
+curl https://$BASE_URL/v1/chat/completions \ 
+-H "Content-Type: application/json" \ 
+-H "Authorization: Bearer $API_KEY" \ 
+-d '{
+"model": "$模型ID",
+"messages": [
+{ "role": "user", "content": "Hello world" }
+]
+}'
+
+
+import openai
+client = openai.OpenAI(api_key="<$API_KEY>", 
+base_url="https://$BASE_URL/v1/")
+
+response = client.chat.completions.create(
+    model="$模型ID",  # model to send to the proxy
+    messages=[
+        {
+            "role": "user",
+            "content": "Hello world"        
+        }
+    ]
+)
+print(response)
+
+const axios = require('axios');
+
+const url = 'https://$BASE_URL/v1/chat/completions';
+
+const payload = {
+  model: '$模型ID',
+  messages: [
+    {
+      role: 'user',
+      content: 'Hello world',
+    },
+  ],
+  stream: false,
+  max_tokens: 512,
+  temperature: 0.6,
+};
+
+axios
+  .post(url, payload, {
+    headers: {
+      Authorization: 'Bearer <$API_KEY>',
+      'Content-Type': 'application/json',
+    },
+  })
+  .then((response) => {
+    console.log('Response Status:', response.status);
+    console.log('Response Body:', response.data);
+  })
+  .catch((err) => {
+    console.error('Error:', err);
+  });
