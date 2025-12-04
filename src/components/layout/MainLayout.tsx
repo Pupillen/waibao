@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 
-export const MainLayout: React.FC = () => (
+const MainLayout: React.FC = () => (
   <div className="flex h-screen bg-slate-50 font-sans text-slate-900 overflow-hidden">
     {/* Sidebar */}
     <Sidebar />
@@ -22,3 +22,5 @@ export const MainLayout: React.FC = () => (
     </main>
   </div>
 );
+
+export default MainLayout;

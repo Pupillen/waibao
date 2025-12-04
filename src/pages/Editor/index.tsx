@@ -20,7 +20,7 @@ const INITIAL_COMMENTS: Comment[] = [
 const Editor: React.FC = () => {
   const [content, setContent] = useState(INITIAL_CONTENT);
   const [showAI, setShowAI] = useState(false);
-  const [selectedText, setSelectedText] = useState('');
+  const [, setSelectedText] = useState('');
   const [comments] = useState<Comment[]>(INITIAL_COMMENTS);
   const editorRef = useRef<HTMLDivElement>(null);
 
